@@ -13,7 +13,7 @@ namespace CustomModelsBuilder.FieldNamesWriter
         public void AddFieldNamesStruct(StringBuilder sb, TypeModel type, int level = 1)
         {
             sb.Append(NewLine);
-            sb.AppendWithIndentation($"public static struct {type.ClrName}FieldNames", level);
+            sb.AppendWithIndentation($"public struct {type.ClrName}FieldNames", level);
             sb.AppendWithIndentation(OpenBracket, level);
             WriteContentTypeProperties(sb, type, level + 1);
             sb.AppendWithIndentation(ClosingBracket, level);
