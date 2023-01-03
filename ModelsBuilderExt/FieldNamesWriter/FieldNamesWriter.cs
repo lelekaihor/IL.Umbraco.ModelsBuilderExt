@@ -8,7 +8,7 @@ namespace CustomModelsBuilder.FieldNamesWriter
     {
         private const char NewLine = '\n';
         private const string OpenBracket = "{";
-        private const string CloseBracket = "}\n";
+        private const string ClosingBracket = "}";
 
         public void AddFieldNamesStruct(StringBuilder sb, TypeModel type, int level = 1)
         {
@@ -16,7 +16,7 @@ namespace CustomModelsBuilder.FieldNamesWriter
             sb.AppendWithIndentation($"public static struct {type.ClrName}FieldNames", level);
             sb.AppendWithIndentation(OpenBracket, level);
             WriteContentTypeProperties(sb, type, level + 1);
-            sb.AppendWithIndentation(CloseBracket, level);
+            sb.AppendWithIndentation(ClosingBracket, level);
         }
 
         private void WriteContentTypeProperties(StringBuilder sb, TypeModel type, int level)
